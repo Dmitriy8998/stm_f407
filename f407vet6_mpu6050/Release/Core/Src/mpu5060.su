@@ -1,0 +1,3 @@
+../Core/Src/mpu5060.c:12:6:mpu5060_check_sensors	40	static
+../Core/Src/mpu5060.c:39:6:mpu5060_register_configuration	56	static
+../Core/Src/mpu5060.c:73:6:mpu_5060_read_gyro	64	static
