@@ -54,17 +54,17 @@ int16_t INDEX_X_INDEX = 0;
 int16_t INDEX_Y_INDEX = 0;
 int16_t INDEX_Z_INDEX = 0;
 
-//int16_t INDEX_X_MIDDLE = 0;
-//int16_t INDEX_Y_MIDDLE = 0;
-//int16_t INDEX_Z_MIDDLE = 0;
+int16_t INDEX_X_MIDDLE = 0;
+int16_t INDEX_Y_MIDDLE = 0;
+int16_t INDEX_Z_MIDDLE = 0;
 
 int16_t INDEX_X_RING = 0;
 int16_t INDEX_Y_RING = 0;
 int16_t INDEX_Z_RING = 0;
 
-//int16_t INDEX_X_BABY = 0;
-//int16_t INDEX_Y_BABY = 0;
-//int16_t INDEX_Z_BABY = 0;
+int16_t INDEX_X_BABY = 0;
+int16_t INDEX_Y_BABY = 0;
+int16_t INDEX_Z_BABY = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
