@@ -46,25 +46,40 @@ I2C_HandleTypeDef hi2c3;
 
 /* USER CODE BEGIN PV */
 //TODO: THESE ARE VARIABLES FOR DEBUGGING, THIS SHOULD BE REMOVED IN THE FUTURE
-int16_t INDEX_X_THUMB = 0;
-int16_t INDEX_Y_THUMB = 0;
-int16_t INDEX_Z_THUMB = 0;
+int16_t GYRO_X_THUMB = 0;
+int16_t GYRO_Y_THUMB = 0;
+int16_t GYRO_Z_THUMB = 0;
+int16_t ACCEL_X_THUMB = 0;
+int16_t ACCEL_Y_THUMB = 0;
+int16_t ACCEL_Z_THUMB = 0;
 
-int16_t INDEX_X_INDEX = 0;
-int16_t INDEX_Y_INDEX = 0;
-int16_t INDEX_Z_INDEX = 0;
+int16_t GYRO_X_INDEX = 0;
+int16_t GYRO_Y_INDEX = 0;
+int16_t GYRO_Z_INDEX = 0;
+int16_t ACCEL_X_INDEX = 0;
+int16_t ACCEL_Y_INDEX = 0;
+int16_t ACCEL_Z_INDEX = 0;
 
-int16_t INDEX_X_MIDDLE = 0;
-int16_t INDEX_Y_MIDDLE = 0;
-int16_t INDEX_Z_MIDDLE = 0;
+int16_t GYRO_X_MIDDLE = 0;
+int16_t GYRO_Y_MIDDLE = 0;
+int16_t GYRO_Z_MIDDLE = 0;
+int16_t ACCEL_X_MIDDLE = 0;
+int16_t ACCEL_Y_MIDDLE = 0;
+int16_t ACCEL_Z_MIDDLE = 0;
 
-int16_t INDEX_X_RING = 0;
-int16_t INDEX_Y_RING = 0;
-int16_t INDEX_Z_RING = 0;
+int16_t GYRO_X_RING = 0;
+int16_t GYRO_Y_RING = 0;
+int16_t GYRO_Z_RING = 0;
+int16_t ACCEL_X_RING = 0;
+int16_t ACCEL_Y_RING = 0;
+int16_t ACCEL_Z_RING = 0;
 
-//int16_t INDEX_X_BABY = 0;
-//int16_t INDEX_Y_BABY = 0;
-//int16_t INDEX_Z_BABY = 0;
+int16_t GYRO_X_BABY = 0;
+int16_t GYRO_Y_BABY = 0;
+int16_t GYRO_Z_BABY = 0;
+int16_t ACCEL_X_BABY = 0;
+int16_t ACCEL_Y_BABY = 0;
+int16_t ACCEL_Z_BABY = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -115,7 +130,7 @@ int main(void)
   MX_I2C2_Init();
   MX_I2C3_Init();
   /* USER CODE BEGIN 2 */
-  GyroDataLeftHand gyro_left;
+  DataLeftHand left_hand;
 
   mpu5060_check_sensors();
   mpu5060_register_configuration();
@@ -125,20 +140,31 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  mpu_5060_read_gyro(&gyro_left);
+	  mpu_5060_read_gyro(&left_hand);
 
 	  //TODO: THESE ARE VARIABLES FOR DEBUGGING, THIS SHOULD BE REMOVED IN THE FUTURE
-	  INDEX_X_THUMB = gyro_left.GYRO_DATA_X_THUMB;
-	  INDEX_Y_THUMB = gyro_left.GYRO_DATA_Y_THUMB;
-	  INDEX_Z_THUMB = gyro_left.GYRO_DATA_Z_THUMB;
+	  GYRO_X_THUMB = left_hand.GYRO_DATA_X_THUMB;
+	  GYRO_Y_THUMB = left_hand.GYRO_DATA_Y_THUMB;
+	  GYRO_Z_THUMB = left_hand.GYRO_DATA_Z_THUMB;
+	  ACCEL_X_THUMB = left_hand.ACCEL_DATA_X_THUMB;
+	  ACCEL_Y_THUMB = left_hand.ACCEL_DATA_Y_THUMB;
+	  ACCEL_Z_THUMB = left_hand.ACCEL_DATA_Z_THUMB;
 
-	  INDEX_X_INDEX = gyro_left.GYRO_DATA_X_INDEX;
-	  INDEX_Y_INDEX = gyro_left.GYRO_DATA_Y_INDEX;
-	  INDEX_Z_INDEX = gyro_left.GYRO_DATA_Z_INDEX;
 
-	  INDEX_X_RING = gyro_left.GYRO_DATA_X_RING;
-	  INDEX_Y_RING = gyro_left.GYRO_DATA_Y_RING;
-	  INDEX_Z_RING = gyro_left.GYRO_DATA_Z_RING;
+	  GYRO_X_INDEX = left_hand.GYRO_DATA_X_INDEX;
+	  GYRO_Y_INDEX = left_hand.GYRO_DATA_Y_INDEX;
+	  GYRO_Z_INDEX = left_hand.GYRO_DATA_Z_INDEX;
+	  ACCEL_X_INDEX = left_hand.ACCEL_DATA_X_INDEX;
+	  ACCEL_Y_INDEX = left_hand.ACCEL_DATA_Y_INDEX;
+	  ACCEL_Z_INDEX = left_hand.ACCEL_DATA_Z_INDEX;
+
+
+	  GYRO_X_RING = left_hand.GYRO_DATA_X_RING;
+	  GYRO_Y_RING = left_hand.GYRO_DATA_Y_RING;
+	  GYRO_Z_RING = left_hand.GYRO_DATA_Z_RING;
+	  ACCEL_X_RING = left_hand.ACCEL_DATA_X_RING;
+	  ACCEL_Y_RING = left_hand.ACCEL_DATA_Y_RING;
+	  ACCEL_Z_RING = left_hand.ACCEL_DATA_Z_RING;
 	  /* */
 
     /* USER CODE END WHILE */
